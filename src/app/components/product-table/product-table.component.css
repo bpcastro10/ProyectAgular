@@ -1,0 +1,460 @@
+.outer-container {
+  background-color: #d4d5d638;
+  padding: 40px;
+  border-radius: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+/* BARRA SUPERIOR: BÃºsqueda + botÃ³n Agregar */
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto 10px auto;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  margin: 0;
+  width: auto;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+}
+
+/* BOTÃ“N AGREGAR */
+.btn-agregar {
+  background-color: #c8ff00;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #faf600e1;
+}
+
+/* CONTENEDOR DE TABLA */
+.table-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 2px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+  overflow-x: auto;
+  max-width: 90%;
+  font-weight: 400;
+  margin: 20px auto;
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 4px 12px rgba(247, 247, 247, 0.61);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+
+/* ENCABEZADOS */
+th {
+  background-color: #ffffff8f;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  border-bottom: 1px solid #d8d8d8;
+  font-weight: bold;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+}
+
+/* CELDAS */
+td {
+  padding: 12px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  table-layout: fixed;
+  height: auto;
+  width: auto;
+}
+
+/* IMÃGENES REDONDAS */
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* HOVER EN FILAS */
+tr:hover td {
+  background-color: #f9f9f9;
+}
+
+/* BOTONES EDITAR Y ELIMINAR */
+.btn1, .btn2 {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn1 {
+  background-color: #bbff00;
+  color: rgb(0, 0, 0);
+}
+
+.btn1:hover {
+  background-color: #fbff00ad;
+}
+
+.btn2 {
+  background-color: #040257;
+  color: rgb(255, 255, 255);
+}
+
+.btn2:hover {
+  background-color: #03022ead;
+}
+
+/* MENÃš OPCIONES (â‹®) */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+}
+
+.menu-options {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.menu-options button {
+  margin: 5px;
+  width: 100px;
+  text-align: left;
+}
+
+/* SELECTOR DE PÃGINA */
+.page-size {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.page-size select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* FLECHAS DE NAVEGACIÃ“N */
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.arrow-btn {
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.arrow-btn:hover:not(:disabled) {
+  background-color: #dddddd;
+}
+
+/* CONTADOR DE RESULTADOS */
+.result-count {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-confirm {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 32px 36px 28px 36px;
+  min-width: 340px;
+  max-width: 90vw;
+  text-align: center;
+}
+.modal-confirm p {
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+.modal-actions {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+.cancel-btn {
+  background: #f5f5f5;
+  color: #1a237e;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cancel-btn:hover {
+  background: #e0e0e0;
+}
+.confirm-btn {
+  background: #ffc107;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.confirm-btn:hover {
+  background: #ffe082;
+}
+
+.product-table-container {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.table-title {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.table-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: left;
+  padding: var(--spacing-sm);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table td {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.table tr:hover {
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.btn-edit,
+.btn-delete {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-delete {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #B71C1C;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.page-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  background-color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-button:hover {
+  background-color: var(--background-color);
+}
+
+.page-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.no-data {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-color);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.pagination-bar .result-count {
+  margin: 0;
+  width: auto;
+  font-size: 15px;
+  color: #333;
+}
+.pagination-bar .page-size {
+  margin: 0;
+  gap: 8px;
+}
+.pagination-bar .page-navigation {
+  margin: 0;
+  gap: 10px;
+}
+@media (max-width: 900px) {
+  .pagination-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pagination-bar .page-navigation {
+    justify-content: flex-start;
+  }
+}

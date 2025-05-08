@@ -1,0 +1,12 @@
+<script>  // Selecciona todos los elementos con la clase "solo-alfanumerico"  
+const camposRestringidos = document.querySelectorAll('.solo-alfanumerico');    
+camposRestringidos.forEach(function(campo) {    
+campo.addEventListener('input', function(e) 
+{       
+var textoFiltrado = e.target.value.replace(/[^A-Za-z0-9]/g, '');            
+if (e.target.value !== textoFiltrado) {            
+e.target.value = textoFiltrado;      
+}    
+});  
+});
+</script>

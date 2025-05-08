@@ -1,0 +1,75 @@
+<div class="outer-container">
+    <div class="barra-superior">
+        <div class="search-bar">
+            <input [(ngModel)]="searchText" placeholder="Buscar producto" />
+        </div>
+        <button (click)="goToRegister()" class="btn-agregar" >Agregar</button>
+    </div>
+</div>
+<div class="table-container">   
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Logo</th>
+                    <th>Nombre</th>
+                    <th>Description</th>
+                    <th>Fecha Liberacion</th>
+                    <th>Fecha Reestructuracion</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of filteredProducts">
+                <td>{{ product.id }}</td>
+                <td>
+                    <img [src]="product.logo" alt="{{ product.nombre }} logo" class="logo-img"/>
+                </td>
+                <td>{{ product.nombre }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.fechaLib | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ product.fechaRev | date: 'yyyy-MM-dd' }}</td>
+                <td style="position: relative;">
+                    <button (click)="toggleMenu(product.id)" class="menu-toggle">⋮</button>
+                    <div class="menu-options" *ngIf="selectedMenuId === product.id">
+                    <button (click)="edit(product.id)" class="btn1">Editar</button>
+                    <button (click)="openDeleteModal(product)" class="btn2">Eliminar</button>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-bar">
+      <div class="result-count">
+        Total: {{ totalFilteredItems }} elementos encontrados
+      </div>
+      <div class="page-size">
+        <label for="pageSize">Mostrar:</label>
+        <select id="pageSize" [(ngModel)]="pageSize" (change)="currentPage = 1">
+          <option [value]="5">5</option>
+          <option [value]="10">10</option>
+          <option [value]="15">15</option>
+        </select>
+      </div>
+      <div class="page-navigation">
+        <button (click)="changePage(-1)" [disabled]="currentPage === 1" class="arrow-btn">←</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="changePage(1)" [disabled]="currentPage === totalPages" class="arrow-btn">→</button>
+      </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación de eliminación -->
+<div class="modal-backdrop" *ngIf="showDeleteModal">
+  <div class="modal-confirm">
+    <p>¿Estás seguro de eliminar el producto <b>{{ productToDelete?.nombre }}</b>?</p>
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeDeleteModal()">Cancelar</button>
+      <button class="confirm-btn" (click)="confirmDelete()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
