@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -88,6 +88,14 @@ export class ProductTableComponent {
         this.loadProducts();
         this.closeDeleteModal();
       });
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.menu-toggle') && !target.closest('.menu-options')) {
+      this.selectedMenuId = null;
     }
   }
 }

@@ -2,6 +2,34 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
+## Instalación de dependencias
+
+Para instalar las dependencias del proyecto, ejecuta:
+
+```bash
+npm install
+```
+
+## Instalación y uso de json-server (API simulada)
+
+Este proyecto utiliza [json-server](https://github.com/typicode/json-server) para simular una API REST.
+
+### Instalación global de json-server
+
+```bash
+npm install -g json-server
+```
+
+### Correr el servidor json-server
+
+Desde la raíz del proyecto, ejecuta:
+
+```bash
+json-server --watch api/db.json --port 3000
+```
+
+Esto levantará un servidor en `http://localhost:3000` usando el archivo `api/db.json` como base de datos.
+
 ## Development server
 
 To start a local development server, run:
